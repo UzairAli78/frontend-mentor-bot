@@ -1,0 +1,399 @@
+# DEVELOPER CV/RESUME GUIDELINES FOR INTERNSHIPS
+# Strict Style Guide for Junior Front-End Developer Resumes
+
+## GOLDEN RULE FOR INTERNSHIPS: PROJECTS BEFORE EDUCATION
+
+For internship applications, ALWAYS structure your CV in this order:
+1. Contact Information & Summary
+2. Technical Skills
+3. Projects (YOUR MOST IMPORTANT SECTION)
+4. Experience (if any work/volunteer experience)
+5. Education
+6. Additional Sections (certifications, activities)
+
+WHY: Employers hiring interns care more about what you can BUILD than where you studied. Your projects are your portfolio - they prove you can code. Education is expected, projects are differentiating.
+
+## SECTION 1: CONTACT INFORMATION & PROFESSIONAL SUMMARY
+
+REQUIRED ELEMENTS:
+- Full Name (larger font, professional)
+- Phone Number (with country code if international)
+- Professional Email (firstname.lastname@domain.com, NOT cutiepie123@)
+- LinkedIn URL (custom URL, not default random numbers)
+- GitHub Profile (CRITICAL for developers)
+- Portfolio Website (if you have one)
+- Location (City, State/Country - no full address)
+
+OPTIONAL:
+- Personal website
+- Twitter (only if professionally relevant)
+
+DO NOT INCLUDE:
+✗ Photo (for US applications - different for some countries)
+✗ Full home address
+✗ Date of birth
+✗ Marital status
+✗ Social security number
+✗ References ("available upon request" is outdated)
+
+PROFESSIONAL SUMMARY (2-3 sentences):
+- WHO you are: Front-end developer/Computer science student
+- WHAT you specialize in: JavaScript, React, responsive design
+- WHAT you're seeking: Front-end development internship
+- Optional: ONE standout achievement
+
+GOOD EXAMPLE:
+"Front-end developer with strong foundation in React, JavaScript, and responsive design. Built 5+ production-ready web applications including an e-commerce platform and task management system. Seeking summer 2024 front-end development internship to apply technical skills and contribute to innovative web projects."
+
+BAD EXAMPLE:
+"Hard-working student who loves coding and wants to learn. Passionate about technology and making a difference. Team player seeking opportunities."
+(Too vague, no technical details, generic buzzwords)
+
+## SECTION 2: TECHNICAL SKILLS
+
+ORGANIZATION: Group by category, list most relevant first
+
+EXAMPLE FORMAT:
+Languages: JavaScript (ES6+), HTML5, CSS3, Python, SQL
+Frameworks/Libraries: React, Bootstrap, Tailwind CSS, jQuery
+Tools & Technologies: Git/GitHub, VS Code, Chrome DevTools, Figma, npm
+Concepts: Responsive Design, RESTful APIs, Agile/Scrum, Web Accessibility
+
+CRITICAL RULES:
+✓ Be HONEST - only list what you can discuss in an interview
+✓ List proficiency levels if helpful: React (Advanced), Vue (Beginner)
+✓ Order by strength and relevance to job
+✓ Include version numbers for frameworks if recent: React 18, Bootstrap 5
+✓ Mention relevant soft skills in separate line: "Soft Skills: Problem-solving, Collaboration, Technical Communication"
+
+AVOID:
+✗ Listing every technology you've touched once
+✗ Rating systems (5 stars for HTML) - unprofessional
+✗ Vague terms like "Microsoft Office" (unless specifically needed)
+✗ Outdated technologies unless job requires them
+✗ Listing programming languages you used once in a class
+
+## SECTION 3: PROJECTS (MOST CRITICAL FOR INTERNSHIPS)
+
+### STRUCTURE FOR EACH PROJECT:
+
+**Project Name** | [Live Demo](URL) | [GitHub](URL)
+Technology Stack: React, Tailwind CSS, Firebase
+Brief Description (1 line)
+• Bullet point describing key feature/achievement with metric
+• Bullet point describing technical challenge solved
+• Bullet point describing impact/result
+
+### BULLET POINT FORMULA:
+Start with ACTION VERB + What you did + Impact/Result + Technology used
+
+ACTION VERBS TO USE:
+Developed, Built, Designed, Implemented, Created, Architected, Engineered, Optimized, Integrated, Configured, Deployed, Automated, Refactored, Debugged, Collaborated
+
+AVOID WEAK VERBS:
+Worked on, Helped with, Was responsible for, Participated in, Tried to, Learned about
+
+### PROJECT EXAMPLES:
+
+GOOD EXAMPLE:
+**E-Commerce Shoe Store** | [Live Demo](link) | [GitHub](link)
+Technology Stack: React, Context API, Stripe API, Tailwind CSS, Firebase
+Full-stack e-commerce platform with shopping cart, user authentication, and payment processing
+• Implemented responsive product catalog with filtering and search functionality, improving user navigation by 40%
+• Integrated Stripe payment API for secure checkout process, handling real-time payment validation
+• Built reusable React components following atomic design principles, reducing code duplication by 30%
+• Deployed to Firebase Hosting with automated CI/CD pipeline using GitHub Actions
+
+BAD EXAMPLE:
+**Shoe Website**
+Made a website for selling shoes. Used React and CSS. Has a shopping cart and looks good on mobile. Learned a lot about web development.
+(No links, no metrics, weak verbs, vague, no technical depth)
+
+### PROJECT SELECTION GUIDELINES:
+
+INCLUDE:
+✓ 3-5 substantial projects
+✓ Projects that solve real problems
+✓ Projects with clean, documented code on GitHub
+✓ Projects that demonstrate range (different technologies/concepts)
+✓ Projects you can demo and explain in detail
+
+AVOID:
+✗ Tutorial follow-alongs (unless significantly modified)
+✗ Class assignments (unless exceptional)
+✗ Broken projects with no deployment
+✗ Projects with empty GitHub repos
+✗ To-do lists and calculators (overdone)
+
+### TECHNICAL DEPTH TO DEMONSTRATE:
+
+For Each Project, Show:
+1. Problem Solving: What challenge did you tackle?
+2. Technical Implementation: What technologies and why?
+3. Measurable Impact: Quantify results when possible
+4. Best Practices: Code quality, testing, documentation
+
+METRICS TO INCLUDE (when truthful):
+- Performance improvements: "Reduced load time by 50%"
+- User engagement: "Increased click-through rate by 25%"
+- Code quality: "Achieved 90% test coverage"
+- Scale: "Handles 1000+ concurrent users"
+- Efficiency: "Decreased API calls by 60%"
+
+## SECTION 4: EXPERIENCE
+
+IF YOU HAVE RELEVANT EXPERIENCE:
+Apply same bullet point formula as projects
+
+**Front-End Developer Intern** | Company Name | June 2023 - Aug 2023
+• Developed responsive landing pages using React and Tailwind CSS, improving mobile conversion by 15%
+• Collaborated with design team to implement pixel-perfect UI components from Figma mockups
+• Refactored legacy jQuery code to modern React, reducing bundle size by 40%
+
+IF YOU HAVE NON-TECH EXPERIENCE:
+Emphasize transferable skills:
+
+**Customer Service Representative** | Retail Store | Sept 2022 - Present
+• Developed strong communication and problem-solving skills while assisting 50+ customers daily
+• Managed inventory tracking system, ensuring 99% accuracy through attention to detail
+• Trained 5 new employees on point-of-sale systems and company procedures
+
+IF YOU HAVE NO EXPERIENCE:
+Skip this section OR include:
+- Volunteer work
+- Freelance projects
+- Open source contributions
+- Teaching assistant positions
+- Relevant club leadership
+
+## SECTION 5: EDUCATION
+
+MINIMAL INFORMATION NEEDED:
+**Bachelor of Science in Computer Science** | Expected May 2025
+University Name, City, State
+GPA: 3.7/4.0 (only include if above 3.5)
+Relevant Coursework: Data Structures, Web Development, Database Systems, Algorithms
+
+OR for bootcamp:
+**Full-Stack Web Development Certificate** | Completed December 2023
+Bootcamp Name, City, State
+600+ hours of intensive training in JavaScript, React, Node.js, and MongoDB
+
+RULES:
+✓ List degree name, graduation date (or expected date)
+✓ Include GPA if 3.5+ (don't round up)
+✓ List relevant coursework (only courses applicable to role)
+✓ Include honors: Dean's List, Cum Laude, scholarships
+✓ Keep it brief - education is not your selling point for internships
+
+AVOID:
+✗ High school information (unless currently in high school)
+✗ Irrelevant coursework (English 101, Intro to Psychology)
+✗ Every course you've ever taken
+✗ GPA if below 3.5
+✗ Clubs/activities unless leadership or technical
+
+## SECTION 6: ADDITIONAL SECTIONS (OPTIONAL)
+
+### CERTIFICATIONS:
+- AWS Certified Cloud Practitioner
+- Meta Front-End Developer Professional Certificate
+- freeCodeCamp Responsive Web Design Certification
+
+### LEADERSHIP & ACTIVITIES:
+**President, Computer Science Club** | Sept 2023 - Present
+• Organize weekly coding workshops for 30+ members, teaching React and JavaScript fundamentals
+• Lead hackathon team of 5 students, placing 2nd in university-wide competition
+
+### ACHIEVEMENTS:
+- 1st Place, University Hackathon 2023 - Built AI-powered study scheduler in 24 hours
+- Contributor to open-source project: React component library with 500+ GitHub stars
+
+## FORMATTING & DESIGN RULES
+
+### DOCUMENT SPECIFICATIONS:
+- Length: ONE PAGE (non-negotiable for internships)
+- Font: Professional sans-serif (Calibri, Arial, Helvetica) or serif (Georgia, Times New Roman)
+- Font Size: 10-12pt for body, 14-16pt for name
+- Margins: 0.5-1 inch all sides
+- File Format: PDF (never send .docx unless specifically requested)
+- File Name: FirstName_LastName_Resume.pdf
+
+### VISUAL HIERARCHY:
+- Use consistent heading styles (bold, slight size increase)
+- Section dividers (horizontal lines) acceptable but minimal
+- Adequate white space - don't cram
+- Consistent bullet point style
+- Align dates to the right
+
+### COLORS:
+- Black text on white background is safest
+- Subtle color accents acceptable (dark blue, dark gray) for name/headings
+- AVOID: Bright colors, multiple colors, gradients, graphics
+
+### ATS (Applicant Tracking System) COMPATIBILITY:
+Many companies use ATS software to scan resumes. To pass:
+✓ Use standard section headings: "Education", "Projects", "Skills"
+✓ Avoid tables, text boxes, headers/footers
+✓ Use standard fonts
+✓ Save as .pdf (unless .docx requested)
+✓ Use keywords from job description naturally
+✗ Don't use images, logos, charts
+✗ Don't use unusual section names ("My Awesome Projects")
+
+## COMMON MISTAKES TO AVOID
+
+### CONTENT MISTAKES:
+✗ Spelling and grammar errors (PROOFREAD MULTIPLE TIMES)
+✗ Inconsistent tense (use past tense for past, present for current)
+✗ First-person pronouns ("I developed" → "Developed")
+✗ Objective statements (outdated - use summary instead)
+✗ "References available upon request" (assumed, wastes space)
+✗ Listing salary requirements or expectations
+✗ Including unrelated hobbies (unless truly unique)
+✗ Exaggerating or lying about skills/experience
+
+### FORMATTING MISTAKES:
+✗ Going over one page
+✗ Inconsistent formatting (different bullet styles, fonts)
+✗ Too much text, no white space
+✗ Tiny font to fit more content
+✗ Outdated templates with borders and graphics
+✗ Unprofessional email addresses
+✗ Broken links or links that don't work
+
+### PROJECT MISTAKES:
+✗ Listing projects with no GitHub links
+✗ GitHub repos with no README
+✗ Unfinished or broken projects
+✗ No deployed/live versions
+✗ Copying tutorial projects verbatim
+✗ Projects that don't run
+
+## CUSTOMIZATION FOR EACH APPLICATION
+
+DO NOT SEND THE SAME RESUME TO EVERY JOB.
+
+Customize by:
+1. Reading job description carefully
+2. Identifying key technologies and skills required
+3. Reordering skills section to match priorities
+4. Highlighting most relevant projects
+5. Adjusting bullet points to emphasize relevant experience
+6. Using keywords from job description naturally
+
+EXAMPLE: If job emphasizes React and accessibility:
+- Mention React version and advanced hooks usage
+- Add bullet: "Implemented WCAG 2.1 AA compliance, ensuring keyboard navigation and screen reader compatibility"
+- Prioritize React projects over vanilla JS projects
+
+## FINAL CHECKLIST BEFORE SUBMITTING
+
+☐ Spell-check and grammar check completed
+☐ All links tested and working (GitHub, portfolio, LinkedIn, live demos)
+☐ Consistent formatting throughout
+☐ One page length
+☐ Professional email address
+☐ Saved as PDF with proper file name
+☐ GitHub profile is public and has README
+☐ LinkedIn profile is complete and matches resume
+☐ Projects have clear README files with screenshots
+☐ No personal pronouns (I, me, my)
+☐ Action verbs start each bullet point
+☐ Quantifiable metrics included where possible
+☐ Technical skills are honest and demonstrable
+☐ Contact information is current and professional
+☐ Reviewed by someone else for feedback
+
+## COVER LETTER QUICK GUIDE
+
+WHEN TO INCLUDE:
+- If application specifically requests it
+- If you have a strong connection to the company
+- If you're changing careers or have unique background
+
+STRUCTURE (3-4 paragraphs):
+1. Opening: Specific position, how you found it, why you're interested
+2. Why You: Highlight 2-3 relevant projects/skills matching job description
+3. Why Company: Show you researched them, what excites you about their work
+4. Closing: Thank you, call to action, contact info
+
+LENGTH: Half page maximum
+
+TONE: Professional but personable, enthusiastic but not desperate
+
+KEY RULE: Cover letter should complement resume, not repeat it. Tell the story BEHIND your projects and why this company specifically.
+
+## INTERNSHIP-SPECIFIC TIPS
+
+WHAT COMPANIES WANT IN INTERNS:
+✓ Willingness to learn
+✓ Strong foundational skills
+✓ Ability to complete projects independently
+✓ Good communication
+✓ Cultural fit
+✓ Proof you can code (through projects)
+
+WHAT COMPANIES DON'T EXPECT:
+✗ Years of experience
+✗ Mastery of every technology
+✗ Previous internship experience
+✗ Perfect code
+
+EMPHASIZE IN YOUR RESUME:
+- Self-directed learning (built projects outside class)
+- Completion (finished projects with deployment)
+- Documentation (README, code comments)
+- Modern practices (Git, testing, responsive design)
+- Problem-solving approach
+- Collaborative skills (if you have them)
+
+## PORTFOLIO WEBSITE REQUIREMENTS
+
+IF YOU HAVE A PORTFOLIO WEBSITE, IT SHOULD INCLUDE:
+- About section with photo and brief bio
+- Project showcases with screenshots, tech stack, live links, GitHub links
+- Contact information
+- Links to GitHub, LinkedIn
+- Blog (optional but impressive if you write about technical topics)
+
+PORTFOLIO SHOULD:
+✓ Load quickly
+✓ Be responsive
+✓ Have your actual projects, not just tutorials
+✓ Be deployed and accessible
+✓ Represent your best work
+
+## GITHUB PROFILE OPTIMIZATION
+
+YOUR GITHUB IS AN EXTENSION OF YOUR RESUME.
+
+MUST HAVES:
+✓ Profile README introducing yourself
+✓ Pinned repositories with your best projects
+✓ Clear README files for each project with:
+  - Project description
+  - Technologies used
+  - Setup instructions
+  - Screenshots/GIFs
+  - Live demo link
+✓ Consistent commit history (shows you code regularly)
+✓ Clean code with comments
+✓ .gitignore files (don't commit node_modules)
+
+AVOID:
+✗ Forked tutorial repos pinned
+✗ Empty or abandoned repositories
+✗ No README files
+✗ Messy, uncommented code
+✗ Committed API keys or sensitive data
+
+## FINAL WORDS: YOUR RESUME IS A LIVING DOCUMENT
+
+- Update it after every new project
+- Continuously improve project descriptions
+- Seek feedback from mentors, peers, career services
+- A/B test different versions for different types of jobs
+- Keep a "master resume" with everything, then trim to one page per application
+
+REMEMBER: Your resume gets you the interview. Your projects and knowledge get you the job. Make sure both are strong.

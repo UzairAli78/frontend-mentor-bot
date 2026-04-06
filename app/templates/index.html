@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front-End Mentor Bot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .title-section h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .title-section p {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .badges {
+            margin-left: auto;
+            display: flex;
+            gap: 6px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .badge {
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+
+        .badge-tech { background: #e0e7ff; color: #4c51bf; }
+        .badge-cv { background: #fef3c7; color: #92400e; }
+        .badge-interview { background: #dbeafe; color: #1e40af; }
+
+        .chat-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            height: 600px;
+        }
+
+        .messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .message {
+            display: flex;
+            max-width: 75%;
+        }
+
+        .message.user {
+            justify-content: flex-end;
+            margin-left: auto;
+        }
+
+        .message.assistant {
+            justify-content: flex-start;
+        }
+
+        .message-content {
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 14px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .message.user .message-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px 12px 2px 12px;
+        }
+
+        .message.assistant .message-content {
+            background: #f3f4f6;
+            color: #1a1a1a;
+            border-radius: 12px 12px 12px 2px;
+        }
+
+        .message-content pre {
+            background: #1a1a1a;
+            color: #a5f3fc;
+            padding: 12px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 8px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            white-space: pre;
+        }
+
+        .message-content code {
+            background: rgba(0,0,0,0.1);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+        }
+
+        .message.user .message-content code {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .message-meta {
+            font-size: 10px;
+            opacity: 0.6;
+            margin-top: 4px;
+        }
+
+        .source-info {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            font-size: 10px;
+            opacity: 0.7;
+        }
+
+        .quick-actions {
+            padding: 0 20px 12px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .quick-btn {
+            padding: 10px 12px;
+            background: white;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            color: #4b5563;
+            transition: all 0.2s;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .quick-btn:hover {
+            border-color: #667eea;
+            background: #f9fafb;
+        }
+
+        .input-area {
+            padding: 16px 20px;
+            border-top: 1px solid #e5e7eb;
+            display: flex;
+            gap: 10px;
+        }
+
+        .input-area input {
+            flex: 1;
+            padding: 10px 14px;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .input-area input:focus {
+            border-color: #667eea;
+        }
+
+        .input-area button {
+            padding: 10px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .input-area button:hover:not(:disabled) {
+            transform: translateY(-1px);
+        }
+
+        .input-area button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .loading {
+            display: flex;
+            gap: 6px;
+            padding: 12px;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            background: #667eea;
+            border-radius: 50%;
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+
+        .dot:nth-child(1) { animation-delay: -0.32s; }
+        .dot:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+
+        @media (max-width: 600px) {
+            .badges { display: none; }
+            .quick-actions { grid-template-columns: 1fr; }
+            .message { max-width: 90%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div class="icon">🎓</div>
+                <div class="title-section">
+                    <h1>Front-End Mentor Bot</h1>
+                    <p>RAG-Powered AI Assistant for Internship Preparation</p>
+                </div>
+                <div class="badges">
+                    <span class="badge badge-tech">📚 Tech</span>
+                    <span class="badge badge-cv">💼 CV</span>
+                    <span class="badge badge-interview">🎯 Interview</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-container">
+            <div class="messages" id="messages">
+                <div class="message assistant">
+                    <div class="message-content">
+<strong>👋 Welcome to Front-End Mentor!</strong>
+
+I'm your AI mentor for front-end development internship preparation. I can help you with:
+
+• <strong>Technical Questions</strong> - HTML, CSS, JavaScript, React, Bootstrap, Tailwind, GitHub deployment
+• <strong>Interview Prep</strong> - Practice questions with feedback on your answers
+• <strong>CV/Resume Advice</strong> - How to write your developer resume and describe projects
+
+Try the quick actions below or ask me anything!
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-actions" id="quickActions">
+                <button class="quick-btn" onclick="setInput('How do I deploy my HTML/CSS/JS site to GitHub Pages?')">
+                    🚀 GitHub Deployment
+                </button>
+                <button class="quick-btn" onclick="setInput('How should I describe my e-commerce project on my CV?')">
+                    📝 CV Project Help
+                </button>
+                <button class="quick-btn" onclick="setInput('Can you ask me an interview question about JavaScript event listeners?')">
+                    🎯 Interview Question
+                </button>
+                <button class="quick-btn" onclick="setInput('Show me how to create a responsive card with Tailwind CSS')">
+                    🎨 Tailwind Syntax
+                </button>
+            </div>
+
+            <div class="input-area">
+                <input
+                    type="text"
+                    id="userInput"
+                    placeholder="Ask about technical concepts, interview prep, or CV writing..."
+                    onkeypress="if(event.key==='Enter') sendMessage()"
+                >
+                <button onclick="sendMessage()" id="sendBtn">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const conversationId = Math.random().toString(36).substring(7);
+
+        function setInput(text) {
+            document.getElementById('userInput').value = text;
+            document.getElementById('quickActions').style.display = 'none';
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.appendChild(document.createTextNode(text));
+            return div.innerHTML;
+        }
+
+        function formatMessage(text) {
+            // Escape HTML first to prevent XSS, then apply formatting
+            // Handle code blocks (must be done before escaping for proper rendering)
+            const codeBlocks = [];
+            text = text.replace(/```[\w]*\n?([\s\S]+?)```/g, (match, code) => {
+                const idx = codeBlocks.length;
+                codeBlocks.push(code);
+                return `%%CODEBLOCK_${idx}%%`;
+            });
+
+            // Escape HTML
+            text = escapeHtml(text);
+
+            // Restore code blocks safely
+            text = text.replace(/%%CODEBLOCK_(\d+)%%/g, (match, idx) => {
+                return `<pre>${escapeHtml(codeBlocks[parseInt(idx)])}</pre>`;
+            });
+
+            // Handle inline code
+            text = text.replace(/`([^`]+)`/g, (match, code) => `<code>${escapeHtml(code)}</code>`);
+
+            // Handle bold
+            text = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+
+            // Handle newlines
+            text = text.replace(/\n/g, '<br>');
+
+            return text;
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('userInput');
+            const messages = document.getElementById('messages');
+            const sendBtn = document.getElementById('sendBtn');
+            const query = input.value.trim();
+
+            if (!query) return;
+
+            // Add user message
+            const userMsg = document.createElement('div');
+            userMsg.className = 'message user';
+            userMsg.innerHTML = `
+                <div class="message-content">
+                    ${escapeHtml(query)}
+                    <div class="message-meta">${new Date().toLocaleTimeString()}</div>
+                </div>
+            `;
+            messages.appendChild(userMsg);
+
+            input.value = '';
+            input.disabled = true;
+            sendBtn.disabled = true;
+            document.getElementById('quickActions').style.display = 'none';
+
+            // Add loading indicator
+            const loadingMsg = document.createElement('div');
+            loadingMsg.className = 'message assistant';
+            loadingMsg.id = 'loading';
+            loadingMsg.innerHTML = '<div class="message-content"><div class="loading"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>';
+            messages.appendChild(loadingMsg);
+            messages.scrollTop = messages.scrollHeight;
+
+            try {
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        message: query,
+                        conversation_id: conversationId
+                    })
+                });
+
+                const data = await response.json();
+
+                // Remove loading
+                const loadingEl = document.getElementById('loading');
+                if (loadingEl) loadingEl.remove();
+
+                if (data.success) {
+                    const assistantMsg = document.createElement('div');
+                    assistantMsg.className = 'message assistant';
+                    const formattedMessage = formatMessage(data.message);
+                    const sources = (data.metadata.sources || []).join(', ');
+                    const category = data.metadata.category || '';
+                    assistantMsg.innerHTML = `
+                        <div class="message-content">
+                            ${formattedMessage}
+                            <div class="source-info">
+                                Sources: ${escapeHtml(sources)}<br>
+                                Category: ${escapeHtml(category)}
+                            </div>
+                            <div class="message-meta">${new Date().toLocaleTimeString()}</div>
+                        </div>
+                    `;
+                    messages.appendChild(assistantMsg);
+                } else {
+                    const errorMsg = document.createElement('div');
+                    errorMsg.className = 'message assistant';
+                    errorMsg.innerHTML = `
+                        <div class="message-content">
+                            ❌ ${escapeHtml(data.message || 'Sorry, I encountered an error. Please try again.')}
+                        </div>
+                    `;
+                    messages.appendChild(errorMsg);
+                }
+            } catch (error) {
+                const loadingEl = document.getElementById('loading');
+                if (loadingEl) loadingEl.remove();
+                const errorMsg = document.createElement('div');
+                errorMsg.className = 'message assistant';
+                errorMsg.innerHTML = `
+                    <div class="message-content">
+                        ❌ Network error. Please check if the server is running.
+                    </div>
+                `;
+                messages.appendChild(errorMsg);
+            }
+
+            input.disabled = false;
+            sendBtn.disabled = false;
+            input.focus();
+            messages.scrollTop = messages.scrollHeight;
+        }
+    </script>
+</body>
+</html>

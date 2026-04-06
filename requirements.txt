@@ -1,0 +1,18 @@
+# Core Dependencies
+flask==3.0.0
+python-dotenv==1.0.0
+groq>=0.11.0
+
+# RAG Pipeline Dependencies
+chromadb==0.4.22
+sentence-transformers>=2.6.0
+
+# Text Processing
+nltk==3.8.1
+numpy==1.24.3
+
+# Web Interface
+flask-cors==4.0.0
+
+# Utilities
+tqdm==4.66.1

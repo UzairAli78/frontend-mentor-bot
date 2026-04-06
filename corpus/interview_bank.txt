@@ -1,0 +1,420 @@
+# FRONT-END INTERVIEW QUESTION BANK
+# 20 Common Questions with Good vs Bad Answer Criteria
+
+## QUESTION 1: What is the DOM and how does JavaScript interact with it?
+
+GOOD ANSWER CRITERIA:
+✓ Explains DOM as Document Object Model - tree structure representation of HTML
+✓ Mentions DOM allows JavaScript to access and manipulate HTML elements
+✓ Provides example: document.querySelector(), getElementById(), or addEventListener()
+✓ Understands DOM is API that browser provides
+✓ Can explain that changes to DOM trigger re-renders
+
+BAD ANSWER CRITERIA:
+✗ Confuses DOM with HTML file itself
+✗ Cannot explain how JavaScript accesses elements
+✗ No practical examples or methods
+✗ Says "DOM is just the webpage" without detail
+✗ Doesn't understand DOM is created by browser
+
+SAMPLE GOOD ANSWER:
+"The DOM is the Document Object Model - it's a tree-structured representation of the HTML document that the browser creates. JavaScript can interact with it using methods like document.querySelector() to select elements, and then modify them with properties like textContent or methods like addEventListener(). For example, I can do document.querySelector('.button').addEventListener('click', handleClick) to make a button respond to clicks."
+
+## QUESTION 2: Explain the difference between let, const, and var in JavaScript.
+
+GOOD ANSWER CRITERIA:
+✓ Explains var is function-scoped, let and const are block-scoped
+✓ Mentions const cannot be reassigned (but objects can be mutated)
+✓ Notes var is hoisted differently (can be used before declaration)
+✓ Recommends using const by default, let when reassignment needed
+✓ Can explain "temporal dead zone" for let/const (bonus)
+
+BAD ANSWER CRITERIA:
+✗ Only says "const is constant" without explaining scope
+✗ Cannot explain hoisting differences
+✗ Thinks const makes objects immutable
+✗ Doesn't know when to use which
+✗ Confuses block scope with function scope
+
+SAMPLE GOOD ANSWER:
+"var is function-scoped and hoisted, while let and const are block-scoped. const prevents reassignment, but if it holds an object, you can still modify the object's properties. I use const by default for values that won't be reassigned, and let when I need to reassign. Var is outdated and can cause issues like variable leaking outside if-blocks."
+
+## QUESTION 3: What is the difference between == and === in JavaScript?
+
+GOOD ANSWER CRITERIA:
+✓ Explains == does type coercion, === checks type and value
+✓ Provides example showing difference: '5' == 5 is true, '5' === 5 is false
+✓ Recommends using === to avoid unexpected behavior
+✓ Understands === is strict equality
+✓ Can mention specific coercion cases (null/undefined, 0/false)
+
+BAD ANSWER CRITERIA:
+✗ Says they're "basically the same"
+✗ Cannot provide concrete example
+✗ Doesn't understand type coercion
+✗ Recommends == over ===
+✗ Confuses with assignment operator =
+
+SAMPLE GOOD ANSWER:
+"== performs type coercion before comparing, while === compares both type and value without coercion. For example, '5' == 5 is true because the string is converted to number, but '5' === 5 is false because they're different types. I always use === to avoid unexpected bugs from type coercion."
+
+## QUESTION 4: What are event listeners and how do they work?
+
+GOOD ANSWER CRITERIA:
+✓ Explains event listeners wait for specific events (click, submit, etc.)
+✓ Shows syntax: element.addEventListener('event', callback)
+✓ Mentions event object passed to callback
+✓ Understands event.preventDefault() and event.stopPropagation()
+✓ Can explain event delegation (bonus)
+
+BAD ANSWER CRITERIA:
+✗ Confuses with inline onclick attributes
+✗ Cannot write addEventListener syntax
+✗ Doesn't know what event object is
+✗ No understanding of event bubbling/capturing
+✗ Cannot explain when to use preventDefault
+
+SAMPLE GOOD ANSWER:
+"Event listeners let you execute code when specific events occur. You attach them with addEventListener() like button.addEventListener('click', function(event) { }). The event object gives you info about the event and methods like preventDefault() to stop default behavior, useful for form submissions. You can also use event delegation to handle events on multiple elements efficiently."
+
+## QUESTION 5: Explain the CSS box model.
+
+GOOD ANSWER CRITERIA:
+✓ Lists four parts: content, padding, border, margin (in order)
+✓ Explains how they stack from inside out
+✓ Mentions box-sizing: border-box includes padding and border in width
+✓ Understands default is content-box
+✓ Can explain impact on layout calculations
+
+BAD ANSWER CRITERIA:
+✗ Cannot list all four parts in order
+✗ Confuses padding and margin
+✗ Doesn't know box-sizing property
+✗ Says margin is inside border
+✗ Cannot explain practical implications
+
+SAMPLE GOOD ANSWER:
+"The box model has four layers from inside out: content (actual content), padding (space around content), border (line around padding), and margin (space outside border). By default, width only applies to content, but with box-sizing: border-box, width includes content, padding, and border, which makes layouts easier to calculate."
+
+## QUESTION 6: What is the difference between display: none and visibility: hidden?
+
+GOOD ANSWER CRITERIA:
+✓ Explains display: none removes element from layout
+✓ Notes visibility: hidden hides element but keeps space
+✓ Mentions accessibility implications
+✓ Understands display: none isn't read by screen readers
+✓ Can suggest use cases for each
+
+BAD ANSWER CRITERIA:
+✗ Says they do the same thing
+✗ Cannot explain layout difference
+✗ No awareness of accessibility
+✗ Doesn't know when to use which
+✗ Confuses with opacity
+
+SAMPLE GOOD ANSWER:
+"display: none completely removes the element from the layout - it takes up no space and can't be interacted with. visibility: hidden hides the element but it still occupies space in the layout. For accessibility, display: none is better when you truly want to hide content from everyone including screen readers, while visibility: hidden might still be announced."
+
+## QUESTION 7: What is the difference between flexbox and grid?
+
+GOOD ANSWER CRITERIA:
+✓ Explains flexbox is one-dimensional (row OR column)
+✓ Explains grid is two-dimensional (rows AND columns)
+✓ Mentions flexbox best for components, grid for layouts
+✓ Can provide use case examples
+✓ Knows basic syntax for both
+
+BAD ANSWER CRITERIA:
+✗ Cannot distinguish one-dimensional vs two-dimensional
+✗ Says grid is "just better flexbox"
+✗ No practical use case understanding
+✗ Doesn't know when to use which
+✗ Cannot write basic syntax
+
+SAMPLE GOOD ANSWER:
+"Flexbox is one-dimensional - it lays out items in a single row or column, making it perfect for components like navigation bars or card content. Grid is two-dimensional - it creates rows and columns simultaneously, ideal for page layouts. I use flexbox for smaller components and alignment, and grid for overall page structure and complex layouts."
+
+## QUESTION 8: Explain closures in JavaScript.
+
+GOOD ANSWER CRITERIA:
+✓ Explains function has access to outer function's variables
+✓ Notes variables persist even after outer function returns
+✓ Provides practical example (counter, event handler)
+✓ Understands lexical scoping
+✓ Can explain common use cases (data privacy, callbacks)
+
+BAD ANSWER CRITERIA:
+✗ Cannot define closure clearly
+✗ No code example
+✗ Doesn't understand variable persistence
+✗ Confuses with global variables
+✗ Cannot explain practical use
+
+SAMPLE GOOD ANSWER:
+"A closure is when a function has access to variables from its outer function, even after the outer function has returned. For example, function makeCounter() { let count = 0; return function() { return ++count; }; }. The inner function 'closes over' count, keeping it private. Closures are useful for data privacy and creating function factories."
+
+## QUESTION 9: What are semantic HTML elements and why are they important?
+
+GOOD ANSWER CRITERIA:
+✓ Defines semantic elements as tags that describe their meaning
+✓ Lists examples: header, nav, main, article, section, footer
+✓ Explains benefits: SEO, accessibility, readability
+✓ Understands screen readers use semantic structure
+✓ Knows when to use div vs semantic tags
+
+BAD ANSWER CRITERIA:
+✗ Cannot name semantic elements
+✗ Says "they're just like divs with different names"
+✗ No understanding of accessibility benefits
+✗ Doesn't know impact on SEO
+✗ Uses divs for everything
+
+SAMPLE GOOD ANSWER:
+"Semantic HTML uses tags that describe their content's meaning - like <header>, <nav>, <main>, <article>. They're important for accessibility because screen readers use them to navigate, for SEO because search engines understand content structure, and for code readability. I use semantic tags instead of divs when the element has semantic meaning."
+
+## QUESTION 10: What is the difference between synchronous and asynchronous JavaScript?
+
+GOOD ANSWER CRITERIA:
+✓ Explains synchronous executes line by line, blocking
+✓ Explains asynchronous doesn't block, uses callbacks/promises
+✓ Provides examples: setTimeout, fetch, file reading
+✓ Mentions event loop (bonus)
+✓ Understands why async is needed (network requests, etc.)
+
+BAD ANSWER CRITERIA:
+✗ Cannot explain blocking vs non-blocking
+✗ No practical examples
+✗ Confuses with parallel processing
+✗ Doesn't understand callbacks or promises
+✗ Cannot explain when async is needed
+
+SAMPLE GOOD ANSWER:
+"Synchronous code executes line by line - each line waits for the previous one to complete, which can block the program. Asynchronous code doesn't block - operations like fetch() or setTimeout() run in the background and notify you when done via callbacks or promises. This is essential for network requests so the UI doesn't freeze while waiting for data."
+
+## QUESTION 11: What are arrow functions and how do they differ from regular functions?
+
+GOOD ANSWER CRITERIA:
+✓ Shows syntax: const func = () => {}
+✓ Explains they don't have their own 'this' binding
+✓ Notes implicit return for single expressions
+✓ Mentions cannot be used as constructors
+✓ Understands lexical 'this' is the key difference
+
+BAD ANSWER CRITERIA:
+✗ Only mentions "shorter syntax"
+✗ Doesn't understand 'this' binding difference
+✗ Cannot explain when NOT to use arrows
+✗ Thinks they're always better than regular functions
+✗ No code examples
+
+SAMPLE GOOD ANSWER:
+"Arrow functions have concise syntax and don't have their own 'this' - they inherit it from the surrounding scope. This is great for callbacks. They also have implicit return for single expressions. However, you can't use them as constructors or for methods that need their own 'this'. Regular functions are needed when 'this' context matters."
+
+## QUESTION 12: Explain the concept of responsive design.
+
+GOOD ANSWER CRITERIA:
+✓ Defines as designing for different screen sizes
+✓ Mentions media queries, flexible grids, flexible images
+✓ Explains mobile-first approach
+✓ Provides breakpoint examples (768px, 1024px)
+✓ Mentions viewport meta tag
+
+BAD ANSWER CRITERIA:
+✗ Says "just make it look good on phone"
+✗ Doesn't know media queries
+✗ No understanding of breakpoints
+✗ Cannot write media query syntax
+✗ Forgets viewport meta tag
+
+SAMPLE GOOD ANSWER:
+"Responsive design means creating layouts that adapt to different screen sizes using flexible grids, media queries, and flexible images. I use mobile-first approach - design for mobile first, then add breakpoints with @media queries for larger screens. Common breakpoints are 768px for tablets and 1024px for desktops. The viewport meta tag is essential for mobile rendering."
+
+## QUESTION 13: What is the purpose of the 'key' prop in React lists?
+
+GOOD ANSWER CRITERIA:
+✓ Explains keys help React identify which items changed
+✓ Notes they should be stable and unique
+✓ Warns against using array index as key
+✓ Understands impact on performance and re-rendering
+✓ Can explain what happens without keys
+
+BAD ANSWER CRITERIA:
+✗ Says "React requires it" without explaining why
+✗ Doesn't understand reconciliation
+✗ Thinks array index is always fine
+✗ Cannot explain consequences of missing/duplicate keys
+✗ Doesn't know what makes a good key
+
+SAMPLE GOOD ANSWER:
+"Keys help React identify which items in a list have changed, been added, or removed. They should be stable, unique identifiers - usually IDs from your data. Using array index is problematic because if items reorder, it can cause bugs and performance issues. Without proper keys, React might unnecessarily re-render or lose component state."
+
+## QUESTION 14: How does the CSS specificity hierarchy work?
+
+GOOD ANSWER CRITERIA:
+✓ Explains specificity determines which styles apply
+✓ Lists hierarchy: inline > IDs > classes/attributes > elements
+✓ Mentions !important overrides (but is bad practice)
+✓ Can calculate specificity scores
+✓ Knows inheritance and cascade rules
+
+BAD ANSWER CRITERIA:
+✗ Cannot explain specificity order
+✗ Relies only on !important
+✗ Doesn't understand cascade
+✗ Cannot determine which style wins
+✗ Confuses specificity with order in file
+
+SAMPLE GOOD ANSWER:
+"Specificity determines which CSS rule applies when multiple rules target the same element. The hierarchy is: inline styles (highest), IDs, classes/attributes/pseudo-classes, then elements. For example, #header .nav has higher specificity than .nav. !important overrides everything but should be avoided. When specificity is equal, the last rule in the stylesheet wins."
+
+## QUESTION 15: What is event bubbling and event capturing?
+
+GOOD ANSWER CRITERIA:
+✓ Explains bubbling: event propagates from target up to root
+✓ Explains capturing: event propagates from root down to target
+✓ Mentions event.stopPropagation()
+✓ Knows addEventListener's third parameter (useCapture)
+✓ Can explain event delegation benefits
+
+BAD ANSWER CRITERIA:
+✗ Cannot distinguish bubbling from capturing
+✗ No understanding of propagation direction
+✗ Doesn't know stopPropagation()
+✗ Cannot explain practical implications
+✗ Never heard of event delegation
+
+SAMPLE GOOD ANSWER:
+"Event bubbling means when an event fires on an element, it propagates upward through ancestors to the root. Capturing is the opposite - from root down to target. Bubbling is the default. You can stop propagation with event.stopPropagation(). This enables event delegation - attach one listener to a parent instead of many to children, improving performance."
+
+## QUESTION 16: What is the difference between localStorage and sessionStorage?
+
+GOOD ANSWER CRITERIA:
+✓ Explains localStorage persists until explicitly cleared
+✓ Explains sessionStorage clears when tab closes
+✓ Mentions both are scoped to origin
+✓ Notes ~5-10MB storage limit
+✓ Understands data is stored as strings
+
+BAD ANSWER CRITERIA:
+✗ Cannot explain persistence difference
+✗ Says they're the same thing
+✗ Doesn't know storage limits
+✗ Unaware data must be stringified
+✗ Cannot provide use cases
+
+SAMPLE GOOD ANSWER:
+"localStorage persists data indefinitely until explicitly cleared, even after browser restart. sessionStorage only persists for the tab's session - it clears when the tab closes. Both are limited to about 5-10MB and store data as strings (use JSON.stringify/parse for objects). I use localStorage for preferences and sessionStorage for temporary session data."
+
+## QUESTION 17: Explain the useState hook in React.
+
+GOOD ANSWER CRITERIA:
+✓ Defines as React hook for adding state to functional components
+✓ Shows syntax: const [state, setState] = useState(initialValue)
+✓ Explains setState triggers re-render
+✓ Mentions state updates may be asynchronous
+✓ Can explain functional updates: setState(prev => prev + 1)
+
+BAD ANSWER CRITERIA:
+✗ Cannot write useState syntax
+✗ Doesn't understand it causes re-render
+✗ Tries to mutate state directly
+✗ Doesn't know about functional updates
+✗ Confuses with class component state
+
+SAMPLE GOOD ANSWER:
+"useState is a React hook that adds state to functional components. You call it like const [count, setCount] = useState(0), which gives you the current state and a function to update it. Calling setCount triggers a re-render. For updates based on previous state, use the functional form: setCount(prev => prev + 1) to avoid stale closures."
+
+## QUESTION 18: What is the difference between margin and padding?
+
+GOOD ANSWER CRITERIA:
+✓ Explains padding is inside border, margin outside
+✓ Notes padding affects background color, margin doesn't
+✓ Mentions margin collapse
+✓ Understands clickable area includes padding not margin
+✓ Can explain when to use each
+
+BAD ANSWER CRITERIA:
+✗ Confuses which is inside/outside
+✗ Says they're interchangeable
+✗ Doesn't know about margin collapse
+✗ Cannot explain visual differences
+✗ No understanding of practical applications
+
+SAMPLE GOOD ANSWER:
+"Padding is space between content and border, inside the element's background. Margin is space outside the border, separating elements. Padding affects the element's clickable area and background, margin doesn't. Adjacent vertical margins collapse to the larger value. I use padding for internal spacing and margin for spacing between elements."
+
+## QUESTION 19: What are promises in JavaScript and how do they work?
+
+GOOD ANSWER CRITERIA:
+✓ Explains promises represent eventual completion/failure of async operation
+✓ Mentions three states: pending, fulfilled, rejected
+✓ Shows .then() and .catch() syntax
+✓ Understands promise chaining
+✓ Can compare to callbacks (callback hell vs promise chains)
+
+BAD ANSWER CRITERIA:
+✗ Cannot define what promise represents
+✗ Doesn't know promise states
+✗ Cannot write .then()/.catch() syntax
+✗ No understanding of async flow
+✗ Confuses with async/await
+
+SAMPLE GOOD ANSWER:
+"Promises represent the eventual result of an asynchronous operation. They have three states: pending, fulfilled, or rejected. You handle results with .then() for success and .catch() for errors. They solve callback hell by enabling chaining: fetch().then(res => res.json()).then(data => console.log(data)). Async/await is syntactic sugar over promises."
+
+## QUESTION 20: How do you center a div horizontally and vertically in CSS?
+
+GOOD ANSWER CRITERIA:
+✓ Provides multiple methods (flexbox, grid, position)
+✓ Explains flexbox: display: flex; justify-content: center; align-items: center
+✓ Mentions grid: display: grid; place-items: center
+✓ Knows older position method: absolute + transform
+✓ Recommends modern approach (flexbox/grid)
+
+BAD ANSWER CRITERIA:
+✗ Only knows one outdated method
+✗ Cannot write complete code
+✗ Doesn't know flexbox/grid approaches
+✗ Uses tables or hacks
+✗ Cannot center both horizontally and vertically
+
+SAMPLE GOOD ANSWER:
+"The modern way is flexbox: On the parent, use display: flex; justify-content: center; align-items: center;. Grid also works: display: grid; place-items: center;. The older method uses absolute positioning: position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);. I prefer flexbox for its simplicity and browser support."
+
+## GENERAL INTERVIEW EVALUATION CRITERIA
+
+EXCELLENT ANSWERS DEMONSTRATE:
+✓ Clear, concise explanations without jargon overload
+✓ Practical code examples that are syntactically correct
+✓ Understanding of WHY, not just WHAT
+✓ Knowledge of best practices and when to use/avoid techniques
+✓ Awareness of browser compatibility and accessibility
+✓ Ability to compare approaches and explain tradeoffs
+✓ Enthusiasm and willingness to say "I don't know but would research"
+
+POOR ANSWERS DEMONSTRATE:
+✗ Vague definitions without substance
+✗ No code examples or incorrect syntax
+✗ Memorized answers without understanding
+✗ Cannot explain practical applications
+✗ No awareness of edge cases or limitations
+✗ Defensive attitude when uncertain
+✗ Confusing related but different concepts
+
+INTERVIEWER RED FLAGS TO WATCH FOR:
+- Candidate cannot write basic syntax from memory
+- Overconfidence without substance
+- Blaming tools/frameworks for own gaps
+- Cannot explain their own code
+- Gives up immediately when uncertain
+- No questions about the problem space
+- Cannot think through problems logically
+
+CANDIDATE GREEN FLAGS TO DISPLAY:
+- Asks clarifying questions
+- Thinks out loud while solving problems
+- Admits gaps but shows learning approach
+- Provides multiple solutions with tradeoffs
+- References documentation/resources
+- Shows genuine curiosity
+- Relates answers to real projects
