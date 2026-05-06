@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: frontend-mentor-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python run.py
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: llama-3.3-70b-versatile
+      - key: MAX_TOKENS
+        value: 1000
+      - key: CHUNK_SIZE
+        value: 500
+      - key: CHUNK_OVERLAP
+        value: 50
+      - key: PORT
+        value: 10000
